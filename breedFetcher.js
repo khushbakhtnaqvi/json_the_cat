@@ -9,27 +9,10 @@ request(`https://api.thecatapi.com/v1/breeds/search?name=${name}`, (error, respo
   }
   data = JSON.parse(body);
 
-  //console.log(res);
   if (data[0]) {
     const res = data[0]['description'];
     console.log("Description:", res);
   } else {
     console.log("Breed Not Found");
   }
-
-
 });
-  
-//   return new Promise((resolve, reject) => {
-//     console.log(`Fetching ${name} Breed...`);
-//     //setTimeout(() => {
-//       if (error) {
-//         reject(error);
-//       } else {
-//         resolve(data);
-//       }
-//     //}, 3000);
-//   });
-// };
-
-// const breedDescription = () => { Promise(findBreed(name)).then((data) => console.log(data[0]['description'])).catch(error)};
